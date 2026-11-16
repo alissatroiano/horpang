@@ -1,0 +1,29 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create the TypeScript and Vitest baseline": [
+      {
+        "executionId": "d260aab0-1f67-4507-8633-3b61e7a20246",
+        "chatSessionId": "sess_741d5188-34b3-4c77-a795-3aa40dbb7e37",
+        "timestamp": 1794793734700
+      },
+      {
+        "executionId": "d260aab0-1f67-4507-8633-3b61e7a20246",
+        "chatSessionId": "sess_741d5188-34b3-4c77-a795-3aa40dbb7e37",
+        "timestamp": 1794793863539
+      },
+      {
+        "executionId": "c7d42b2d-ec22-4ab6-b1c5-48e1eff18ab5",
+        "chatSessionId": "sess_30fdead5-1431-46f8-a076-ecec9826e1dd",
+        "timestamp": 1794793870702
+      }
+    ],
+    "1. Minimal toolchain for Area A": [
+      {
+        "executionId": "d260aab0-1f67-4507-8633-3b61e7a20246",
+        "chatSessionId": "sess_741d5188-34b3-4c77-a795-3aa40dbb7e37",
+        "timestamp": 1794793863707
+      }
+    ]
+  }
+}

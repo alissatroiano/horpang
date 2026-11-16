@@ -14,8 +14,8 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
 
 ## Tasks
 
-- [ ] 1. Minimal toolchain for Area A
-  - [ ] 1.1 Create the TypeScript and Vitest baseline
+- [x] 1. Minimal toolchain for Area A
+  - [-] 1.1 Create the TypeScript and Vitest baseline
     - Create `package.json` with dependencies `lz-string`, and dev dependencies `typescript`, `vitest`, `fast-check`, `@types/lz-string` (if needed)
     - Create `tsconfig.json` with `"strict": true` and `"noUncheckedIndexedAccess": true`
     - Create `vitest.config.ts` (environment `node`) and add `test` script using `vitest --run`
