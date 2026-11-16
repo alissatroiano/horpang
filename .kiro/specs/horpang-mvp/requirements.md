@@ -197,7 +197,7 @@ The requirements are split into two areas:
 3. WHILE the Quiz_Modal is open, THE HUD SHALL remain visible and SHALL continue to display the current score, Streak_Multiplier, Battery percentage, and progress text without being covered by the Quiz_Modal.
 4. THE HUD SHALL show the Battery value as a text percentage, an integer from 0 to 100 followed by "%", in addition to any graphical indicator.
 5. IF the Score_Engine state is unavailable when the Gallery_Stage is shown, THEN THE HUD SHALL display a score of 0, a Battery percentage of 0%, and progress text with N equal to 0, and SHALL remain visible.
-6. WHILE the Gallery_Stage is shown, THE Score_Footer SHALL display the current score at the bottom of the Gallery_Stage, remain visible while the page content scrolls and while the Quiz_Modal is open, and update within 100 ms of each score change so that it always equals the HUD score.
+6. WHILE the Gallery_Stage is shown, THE Score_Footer SHALL display the active Quiz title and the current score at the bottom of the Gallery_Stage, inside a centered container of at most 72 rem width, remain visible while the page content scrolls and while the Quiz_Modal is open, and update within 100 ms of each score change so that it always equals the HUD score.
 
 ### Requirement 10: Polaroid Cards
 
@@ -206,7 +206,7 @@ The requirements are split into two areas:
 #### Acceptance Criteria
 
 1. WHEN the Gallery_Stage loads a Quiz, THE Gallery_Stage SHALL render exactly one Polaroid for each Question in the Quiz, with no more and no fewer Polaroids than Questions.
-2. THE Gallery_Stage SHALL lay out the Polaroids as a wrapping grid of inline cards, each with a `#666666` frame, padding and a drop shadow.
+2. THE Gallery_Stage SHALL lay out the Polaroids as a responsive grid with 1 column below 640 px, 2 columns from 640 px, 3 columns from 768 px and 4 columns from 1024 px, with a 1.5 rem gap, inside a centered container of at most 72 rem width, each card with a `#666666` frame, padding and a drop shadow.
 3. WHILE a Polaroid is neither hovered nor focused, THE Polaroid SHALL render with a grayscale filter (zero color saturation), a `blur(8px)` filter so that the Question text is not legible, a scale of 0.8, and a tilt rotation that alternates by position in the repeating sequence +5, -5, -3, +3 degrees, and the tilt SHALL remain fixed for the lifetime of that Polaroid instance and stay within -8 and +8 degrees inclusive.
 4. WHILE a Polaroid is hovered or has keyboard focus, THE Polaroid SHALL render at 0 degrees rotation, scale 1 and no blur with the Question content legible, using a transition of 0.35 seconds, and WHEN hover and focus both end, THE Polaroid SHALL restore the tilt, scale and blur using the same 0.35-second transition.
 5. THE Polaroid SHALL be a button element with an accessible label that includes the Question position and, for a solved Question, the text "Banished".

@@ -1,38 +1,65 @@
-# prompt
+# HORPANG — Architecture & Design Planning Document
 
-I am building Horpang, a gamified haunted quiz web application for the Costume Contest category of Kiroween 2026 Hackathon. The target market is teenagers who will play through a spooky 3-stage interactive horror experience to study for a test, while educators can customize the quiz content.
+## 1. Vision & Hackathon Category Fit ("Costume Contest")
+**Horpang** is a gamified, horror-themed educational study application designed for middle school and high school students (grades 6–12). Rather than using spooky visuals as superficial decoration, every horror mechanic directly reinforces active recall and focus:
+* **Blurred-to-Sharp Monochrome Polaroids** prevent visual clutter and isolate one curriculum concept at a time.
+* **Battery Drain & Jump-Scare Stingers** create real stakes for wrong answers, motivating careful reading and learning from hints.
+* **Flashlight Escape Corridor** rewards completing a study set with an interactive dark-hallway search for the glowing exit.
+* **Lantern Mode (Accessibility)** removes darkness, blur, and jump scares so students with sensory sensitivities or teachers reviewing questions can read comfortably.
 
-Tech Stack: TypeScript, Vite, Tailwind CSS, and the Web Audio API for procedural, copyright-free spooky sound effects and jump-scare stingers.
+---
 
-Exact User Flow, Guidance & Game Mechanics:
+## 2. Updated User Flow & Stage Architecture
 
-1. Stage 1 — Dripping Crimson Title Screen: Pitch-black background (#000000) with a viscous deep-crimson (#990000 / #b30000) liquid drip animation cascading from the top edge to reveal the distressed HORPANG title. Include a pulsing JS-animated prompt ('Click anywhere or press Enter to enter the dark...') and a subtle corner button for Educator Studio.
+### Stage 1: Theatrical Intro Video (`TitleStage`)
+* **Visuals:** Full-viewport bundled video (`src/assets/intro.mp4`, ~1.39 MB) depicting shadowy hands behind frosted glass, a scrambled-text reveal (*"DON'T PLAY ALONE..."* → *"CLICK TO START"*), and the glowing spiderwebbed **HORPANG** logo.
+* **Playback & Controls:** Plays automatically (`muted playsInline`) and holds cleanly on the final *"HORPANG / CLICK TO START"* frame so the call-to-action stays readable. Clicking anywhere on the stage (or pressing `Enter`) unlocks the Web Audio API context and enters Stage 2.
+* **Lantern Mode Behavior:** Pauses on the crisp title frame with a static *"Click or press Enter to begin"* prompt.
 
-2. Stage 2 — Dark Corridor Flashlight Exploration: A dark stairwell/hallway scene with a cursor-tracked circular flashlight overlay (mousemove / touch translate shadow mask). Include a fading eerie instruction overlay ('Move your flashlight to search the corridor and find the EXIT door...') and a gentle nudge if the user hasn't found the glowing green EXIT door (#39ff14) within 8 seconds. Clicking the exit door advances to the gallery.
+### Stage 2: Haunted Polaroid Gallery (`GalleryStage`)
+* **Layout:** Structured 4-row responsive Tailwind CSS container layout (`max-w-6xl`):
+  1. **Row 1 (Sticky HUD):** 3-column bar showing *Score & Streak* (left), *Banished Progress & Flashlight Battery %* (center), and *Lantern Mode / Mute / Grimoire* toggles (right).
+  2. **Row 2 (Diegetic Guidance Banner):** Centered `max-w-3xl` live-region banner guiding the student (*"Inspect a cursed photograph to uncover its question..."*).
+  3. **Row 3 (Polaroid Grid):** Responsive 1-to-4 column grid (`grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6`) displaying tilted (`+5°, -5°, -3°, +3°`), blurred monochrome specimen/curriculum Polaroids. Hovering or keyboard-focusing snaps a card into sharp focus.
+  4. **Row 4 (Pinned Footer):** Fixed bottom bar displaying the active curriculum quiz title and live score.
+* **Quiz Modal & Jump-Scare Feedback:**
+  * Clicking a Polaroid opens a high-contrast multiple-choice modal (`#e8e4d8` bone text on `#000`).
+  * **Correct Answer:** Awards `100 × streak` points (up to 5x), restores `+20%` flashlight battery, displays a curriculum explanation, and stamps the Polaroid with a glowing green **Banished** seal.
+  * **Wrong Answer:** Resets streak, drains `-15%` battery, records the missed concept for end-of-game review, triggers one of 4 self-contained CSS/SVG jump scares (`Endoskeleton`, `The Horpang`, `CRT Static`, `Shattered Glass`) with a procedural Web Audio sting (~1.5s), and reopens the modal with a study hint.
 
-3. Stage 3 — Haunted Polaroid Gallery, HUD & Guided Quiz Modals:
-    1. Top Spooky HUD Bar: Always visible in Stage 3, tracking Score / Points, Streak Multiplier, Flashlight Battery %, and Progress (e.g., 2 / 5 Memories Banished), plus a 'Lantern Mode' accessibility toggle.
-    2. Guided Polaroid Selection: Display tilted, monochrome Polaroid cards that stay blurred until hovered/focused. Use a JS-driven guide banner ('Inspect a cursed photograph to uncover its question...') and visually mark solved cards with a green 'Banished' seal so students always know which cards remain.
-    3. Interactive Quiz Modal: Clicking a Polaroid opens a high-contrast modal showing the question number (Question 1 of 5), the question prompt, and multiple-choice options.
-    4. Correct Answer Feedback: Awards points, increments streak, restores flashlight battery, shows a brief study explanation, and marks the Polaroid as solved.
-    5. Wrong Answer Jump Scare System (Custom CSS/SVG Shuffler): • Triggers a full-screen overlay that shuffles through 4 original, self-contained CSS/SVG horror animations (preventing back-to-back repeats) paired with a procedural Web Audio API horror sting (sub-bass drop + dissonant metallic screech) and screen shake for ~1.5 seconds:
-        1. Split-Face Mechanical Endoskeleton: A shadowed doll/animatronic face whose faceplate splits open to reveal glowing eyes and metallic teeth.
-        2. Lunging Shadow Entity ('The Horpang'): Pitch-black silhouette with glowing crimson eyes rapidly scaling toward the screen with chromatic aberration.
-        3. Analog CRT Static & Phantom Face: High-contrast TV noise glitch flashing a distorted monochrome ghostly face.
-        4. Shattered Glass & Reaching Shadow Hands: Sudden screen-crack SVG overlay with dark hands clawing inward from the edges. After the 1.5-second scare, return to the quiz modal with a helpful study hint so the student can learn from the mistake. (When Lantern Mode is enabled, replace the jump scare with a calm visual shake and hint).
+### Stage 3: Flashlight Escape Corridor (`CorridorStage`)
+* **Unlock Condition:** Unlocks automatically once every Polaroid memory in Stage 2 is banished.
+* **Mechanic:** A dark stairwell/corridor covered by a cursor-tracked (`pointermove` / touch) `200vw × 200vh` radial flashlight mask. Students sweep their beam to locate the glowing green `#39ff14` **EXIT** door and click/activate it to escape.
+* **Guidance:** Fading initial prompt (*"Move your flashlight to search the corridor and find the EXIT door..."*) plus an 8-second directional nudge if the door hasn't been found yet.
 
-4. Stage 4 — Escape / Summary Screen: Once all Polaroid questions are answered, show the final score, accuracy percentage, missed concepts to review, and a 'Play Again' button.
+### Stage 4: Escape Summary & Arcade Scoreboard (`SummaryStage`)
+* **Study Review:** Displays final score vs. maximum possible score, first-try accuracy percentage, escape time, and an ordered list of **Missed Concepts to Review**.
+* **Student Engagement:** Local top-5 arcade leaderboard (`localStorage`) with 3-letter initials and a **"Copy Escape Report"** button for sharing results in group chats or Google Classroom.
 
-5. Educator Studio ('The Grimoire'): A clean editor where teachers can add, edit, or import/export custom quiz questions (JSON/CSV) and generate a shareable URL hash (lz-string) so students or hackathon judges can play custom quizzes with zero backend setup.
-First
+### Always-Accessible Educator Studio: "The Grimoire" (`Grimoire`)
+* **Global Access:** Accessible via a persistent **"Grimoire"** button in the top navigation/HUD across all stages (not just the Title screen) so instructors can inspect, edit, or switch study decks at any point during class or a demo.
+* **Features:** Add/edit/delete questions (1–30), live field validation, CSV & JSON import/export, curriculum subject presets (e.g., *High School Biology & Anatomy*), and shareable link generation.
 
-First, set up our Kiro workflow before writing app code:
+---
 
-1. Steering Doc: Create .kiro/steering/horpang-aesthetic.md locking in our visual language (pitch-black #000 canvas, crimson liquid drip intro, cursor-tracked circular flashlight mask, glowing green exit cues, monochrome blurred-to-sharp Polaroids, procedural CSS/SVG jump-scare rules, and Lantern Mode accessibility).
+## 3. Data Persistence & Classroom Sharing Trade-Offs
 
-2. Spec-Driven Development: Generate .kiro/specs/horpang-mvp/ with requirements.md, design.md, and tasks.md separating the Quiz Data & URL-Sharing Engine from the 3-Stage Interactive Horror UI, Jump Scare Shuffler, Guidance Controller, & Score State Engine."
+To let educators customize quizzes and allow students to play from home, here are the four storage/sync architectures weighed for Horpang:
 
+| Approach | How It Works | Pros | Cons / Trade-Offs | Verdict |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. `lz-string` URL Hash + `localStorage` (Current MVP)** | Compresses the entire quiz JSON into the URL fragment (`#N4Ig...`) and caches drafts locally. | **Zero backend, zero accounts, instant offline/online sharing**, works out-of-the-box for hackathon judges. | Static snapshot per link (if a teacher fixes a typo, they must share a new URL); no teacher dashboard for student scores. | **Core Foundation (Keep)** |
+| **2. Published Google Sheets CSV (`?sheet=<url>`)** | Teacher edits a Google Sheet (*File → Share → Publish to web → CSV*); Horpang fetches the URL and parses it via `csvCodec.ts`. | **Live-editable per class** using a tool teachers already know; students at home always get updated questions from the same link; zero DB maintenance. | Read-only (students don't write scores back to the Sheet); ~5-minute Google publish cache delay unless using Apps Script. | **Best Phase-2 Classroom Upgrade** |
+| **3. Google Apps Script Web App** | A lightweight script attached to a Google Sheet exposes `doGet()` (live quiz CSV/JSON) and `doPost()` (logs student escape scores). | **Two-way sync** (live quiz edits + student scoreboard logged directly into the teacher's Sheet) with zero external server costs. | Requires each teacher to authorize/deploy a script on their Google account; slightly higher setup friction. | **Great Optional Educator Template** |
+| **4. Firebase / Supabase Backend** | Cloud database + Auth storing quizzes under short room codes (e.g., `horpang.app/room/BIO101`) and real-time class leaderboards. | Short clean room codes, instant live edits, real-time teacher analytics across all students at home. | Introduces API keys, security rules, rate limits, and potential auth friction during hackathon judging. | **Post-Hackathon / Scale Option** |
 
-## GIF Array
+### Recommended Path
+1. **MVP (Current Build):** Keep `lz-string` URL hashes + CSV/JSON import/export + global **Grimoire** access so the app is 100% self-contained and reliable.
+2. **Immediate Post-MVP Enhancement:** Add **`?sheet=<encodedCsvUrl>`** support to `loadQuiz.ts` and **The Grimoire** so teachers can paste a published Google Sheet CSV link and give each class a permanent, live-editable study URL.
 
-https://www.pinterest.com/pin/hereditary-movie-gif--18647785948688615/, https://images.squarespace-cdn.com/content/v1/58e45a52ebbd1a24417fdf93/1528924803636-R3NTNOLFL1RFR914R0P7/hereditary.gif, https://64.media.tumblr.com/e8eff83249f76e2b21815f02f934ce6b/3699a2c5b7c136ed-01/s540x810/981d2e66248ea7353337cd5aac8768958e7c220f.gif, https://crustula.com/wp-content/uploads/2018/06/hereditary7.gif?w=720, https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e27fde95-0417-4cbb-b536-4d405138007f/d5mnuvz-6be93b93-3c96-4524-b3d6-ed177545d6c1.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9lMjdmZGU5NS0wNDE3LTRjYmItYjUzNi00ZDQwNTEzODAwN2YvZDVtbnV2ei02YmU5M2I5My0zYzk2LTQ1MjQtYjNkNi1lZDE3NzU0NWQ2YzEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.9ZWuer3N_rjjQvidYKZTcCPjqaCTkTQgYvx1-Wg_ocM, https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3879d51a-63d4-4d0c-ab8e-021766aba32b/d9178sk-76cc5653-8e6f-4d0c-8277-23a64020c8a5.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8zODc5ZDUxYS02M2Q0LTRkMGMtYWI4ZS0wMjE3NjZhYmEzMmIvZDkxNzhzay03NmNjNTY1My04ZTZmLTRkMGMtODI3Ny0yM2E2NDAyMGM4YTUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZSMz83vSiGgxeZ9RadSnez1Ctt7xsCHsKLwTVNYZoG8, https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fe86a64-a39c-4db3-b26b-bbb8733db350/dbmva6x-9cf5c14b-b6f7-4a1f-9274-5ebd989f4257.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8yZmU4NmE2NC1hMzljLTRkYjMtYjI2Yi1iYmI4NzMzZGIzNTAvZGJtdmE2eC05Y2Y1YzE0Yi1iNmY3LTRhMWYtOTI3NC01ZWJkOTg5ZjQyNTcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.E9WO7SFTYlSXe1VbVgm4ee8DlCbYjtBC0OfLKLXReII
+---
+
+## 4. Future Expansion: "Flashlight Clue Hunt" (Escape Room Mode)
+* **Concept:** An optional second game mode selectable on the Title screen alongside *Polaroid Gallery*.
+* **Gameplay:** Students explore a pitch-black room with their flashlight beam to uncover 5–8 hidden curriculum clues (e.g., an anatomical chart, a lab notebook, a microscope slide) that reveal the digits/letters needed to unlock the exit door keypad.
+* **Why It Fits:** Uses the exact same `Quiz` data model (`concept`, `hint`, `prompt`) while appealing to students who prefer spatial exploration and logical deduction over card-based quizzes.

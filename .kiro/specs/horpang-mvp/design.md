@@ -454,7 +454,14 @@ Adapted structure from the reference:
 
 #### Gallery stage
 
-`GalleryStage` composes: `Hud` (top, `position: sticky; top: 0; z-index` above the modal backdrop but the modal is positioned below it so it never covers the HUD, Req 9.3), `GuideBanner`, a `<ul>` grid of `Polaroid` buttons, `ScoreFooter` (`position: fixed; bottom: 0`, always visible, Req 9.6) and `QuizModal`.
+`GalleryStage` is a clean, structured Tailwind layout on a plain dark page background. The full-bleed Blood_Canvas belongs to `TitleStage` only and is never mounted here. The stage is four stacked rows, each inside a centered container (`mx-auto w-full px-4`):
+
+1. **Row 1, `Hud`** (`max-w-6xl`, `position: sticky; top: 0`, z-index above the modal backdrop but the modal is positioned below it so it never covers the HUD, Req 9.3). A 3-column bar (`grid grid-cols-1 gap-3 sm:grid-cols-3 items-center`): left = Score and Streak, center = progress text and Battery meter, right = Lantern toggle and mute button.
+2. **Row 2, `GuideBanner`** (`max-w-3xl`, centered, `border` with a subtle color, `rounded`, `aria-live="polite"`).
+3. **Row 3, Polaroid grid** (`max-w-6xl`): a `<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">` of `<li>` wrapping `Polaroid` buttons. Cards keep `--tilt` and the blur-to-sharp hover and focus transition. The container has bottom padding at least the footer height so the pinned footer never covers a card.
+4. **Row 4, `ScoreFooter`** (`position: fixed; bottom: 0; inset-x: 0`, always visible, Req 9.6), with an inner `max-w-6xl` bar showing the active quiz title (`Quiz.title`, truncated with an ellipsis) and the score summary (score, `N / M Memories Banished`).
+
+`QuizModal` is mounted over the stage as before.
 
 **HUD**: shows `Score N`, `Streak xM`, `Battery P%` (text plus a bar), `N / M Memories Banished`, the Lantern toggle and the mute button. N is clamped to `min(N, M)`. If the score state is missing it renders 0, 0%, `0 / M` (Req 9.5). It subscribes to the store and re-renders on change (within 100 ms by direct synchronous update). Score_Footer reads the same `score` field, so equality is structural.
 

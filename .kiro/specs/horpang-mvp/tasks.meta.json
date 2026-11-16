@@ -16,6 +16,11 @@
         "executionId": "c7d42b2d-ec22-4ab6-b1c5-48e1eff18ab5",
         "chatSessionId": "sess_30fdead5-1431-46f8-a076-ecec9826e1dd",
         "timestamp": 1794793870702
+      },
+      {
+        "executionId": "c7d42b2d-ec22-4ab6-b1c5-48e1eff18ab5",
+        "chatSessionId": "sess_30fdead5-1431-46f8-a076-ecec9826e1dd",
+        "timestamp": 1794794841459
       }
     ],
     "1. Minimal toolchain for Area A": [
@@ -23,6 +28,731 @@
         "executionId": "d260aab0-1f67-4507-8633-3b61e7a20246",
         "chatSessionId": "sess_741d5188-34b3-4c77-a795-3aa40dbb7e37",
         "timestamp": 1794793863707
+      }
+    ],
+    "2.1 Create the question model and limits": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794930901
+      },
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794939643
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802745923
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802761728
+      }
+    ],
+    "2.2 Implement the Validator": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794931062
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802746097
+      }
+    ],
+    "2.8 Implement the Default_Quiz": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794931223
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802747229
+      }
+    ],
+    "3.1 Implement the JSON_Codec": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794931476
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802747516
+      }
+    ],
+    "3.4 Implement the CSV_Codec": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794931626
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802748001
+      }
+    ],
+    "3.7 Implement the Share_Codec": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794931807
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802748465
+      }
+    ],
+    "3.11 Implement hash loading and the engine barrel": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794931964
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802750015
+      }
+    ],
+    "4. Checkpoint - Area A complete": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794932133
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802750394
+      }
+    ],
+    "5.1 Add Vite, Tailwind and the app shell": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794932297
+      },
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794940070
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802750473
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802762229
+      }
+    ],
+    "6.1 Implement Rng and Scare_Shuffler": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794932424
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802750724
+      }
+    ],
+    "6.3 Implement the Score_Engine reducer": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794932611
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802751097
+      }
+    ],
+    "6.9 Implement summary formulas": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794932732
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802752181
+      }
+    ],
+    "6.11 Implement the Guidance_Controller": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794932860
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802752454
+      }
+    ],
+    "6.13 Implement the stage state machine": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794932985
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802752754
+      }
+    ],
+    "6.15 Implement flashlight geometry": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794933132
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802753019
+      }
+    ],
+    "6.17 Implement the Lantern_Store": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794933279
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802753279
+      }
+    ],
+    "6.19 Implement the contrast helper": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794933422
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802753547
+      }
+    ],
+    "7. Checkpoint - Area B pure modules complete": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794933561
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802753787
+      }
+    ],
+    "8.1 Implement the store, stage host and UI helpers": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794933679
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802753916
+      }
+    ],
+    "9.1 Implement the Blood_Canvas effect": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794933811
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802754195
+      }
+    ],
+    "9.2 Implement the TitleStage": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794933939
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802754323
+      }
+    ],
+    "10.1 Implement the Audio_Engine": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794934071
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802754589
+      }
+    ],
+    "11.1 Build the four scare illustrations": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794934216
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802755198
+      }
+    ],
+    "11.2 Implement the Scare_Renderer": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794934333
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802755388
+      }
+    ],
+    "12.1 Create the Cursed_Photograph generator": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794934458
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802755653
+      }
+    ],
+    "12.2 Implement the Polaroid": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794934726
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802755789
+      }
+    ],
+    "12.4 Implement the HUD, Score_Footer and Guide banner": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794934871
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802756054
+      }
+    ],
+    "12.5 Implement the Quiz_Modal": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794935078
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802756182
+      }
+    ],
+    "12.6 Implement the GalleryStage and wire the answer flow": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794935244
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802756306
+      }
+    ],
+    "13.1 Implement the CorridorStage": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794935381
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802756577
+      }
+    ],
+    "14.1 Implement the SummaryStage": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794935512
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802756844
+      }
+    ],
+    "15.1 Implement the Grimoire": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794935641
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802757162
+      }
+    ],
+    "16. Checkpoint - All stages implemented": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794935782
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802757447
+      }
+    ],
+    "17.1 Wire the application in `main.ts`": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794935922
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802757558
+      }
+    ],
+    "17.2 Add the decoding notice and boot error screen": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794936047
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802757691
+      }
+    ],
+    "18. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "d9de2c35-2f45-4808-9c4e-5f69bc8c4b5d",
+        "chatSessionId": "sess_81481c58-81ff-4a1f-be84-f06c021e6d56",
+        "timestamp": 1794794936186
+      },
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802758246
+      }
+    ],
+    "2.3 Create shared fast-check generators": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802746349
+      }
+    ],
+    "2.4 Write property test for Validator acceptance": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802746491
+      }
+    ],
+    "2.5 Write property test for one error per failing field": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802746652
+      }
+    ],
+    "2.6 Write property test for duplicate ids": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802746799
+      }
+    ],
+    "2.7 Write property test for Validator totality": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802747068
+      }
+    ],
+    "2.9 Write unit tests for the Default_Quiz": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802747377
+      }
+    ],
+    "3.2 Write property test for the JSON round trip": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802747655
+      }
+    ],
+    "3.3 Write unit tests for the JSON_Codec": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802747792
+      }
+    ],
+    "3.5 Write property test for the CSV round trip": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802748175
+      }
+    ],
+    "3.6 Write unit tests for the CSV_Codec": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802748328
+      }
+    ],
+    "3.8 Write property test for share round trip, URL safety and size": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802748997
+      }
+    ],
+    "3.9 Write property test for share determinism": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802749314
+      }
+    ],
+    "3.10 Write property test for share decode totality": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802749802
+      }
+    ],
+    "3.12 Write property test for initial quiz resolution": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802750172
+      }
+    ],
+    "6.2 Write property test for the Scare_Shuffler": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802750957
+      }
+    ],
+    "6.4 Write property test for correct-answer scoring": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802751218
+      }
+    ],
+    "6.5 Write property test for wrong-answer handling": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802751373
+      }
+    ],
+    "6.6 Write property test for score invariants": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802751505
+      }
+    ],
+    "6.7 Write property test for missed concept ordering": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802751642
+      }
+    ],
+    "6.8 Write property test for reset": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802751826
+      }
+    ],
+    "6.10 Write property test for summary values": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802752314
+      }
+    ],
+    "6.12 Write property test for guidance": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802752629
+      }
+    ],
+    "6.14 Write property test for stage transitions": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802752893
+      }
+    ],
+    "6.16 Write property test for flashlight centering": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802753157
+      }
+    ],
+    "6.18 Write property test for Lantern setting": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802753412
+      }
+    ],
+    "6.20 Write unit tests for contrast": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802753667
+      }
+    ],
+    "8.2 Write unit tests for the focus trap and StageHost": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802754061
+      }
+    ],
+    "9.3 Write unit tests for the Blood_Canvas and TitleStage": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802754449
+      }
+    ],
+    "10.2 Write property test for master gain cap": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802754776
+      }
+    ],
+    "10.3 Write unit tests for the Audio_Engine": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802755065
+      }
+    ],
+    "11.3 Write unit tests for the Scare_Renderer": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802755515
+      }
+    ],
+    "12.3 Write property test for gallery layout": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802755924
+      }
+    ],
+    "12.7 Write unit tests for the Gallery UI": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802756439
+      }
+    ],
+    "13.2 Write unit tests for the Corridor": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802756719
+      }
+    ],
+    "14.2 Write unit tests for the Summary": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802757032
+      }
+    ],
+    "15.2 Write unit tests for the Grimoire": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802757304
+      }
+    ],
+    "17.3 Write the asset audit smoke test": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802757824
+      }
+    ],
+    "17.4 Write accessibility checks": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802757967
+      }
+    ],
+    "17.5 Write an end-to-end flow integration test": [
+      {
+        "executionId": "80b9589d-610b-4459-8b9d-9c016a0f9eb5",
+        "chatSessionId": "sess_1c72f656-e949-45e7-960f-550f939d5428",
+        "timestamp": 1794802758106
       }
     ]
   }

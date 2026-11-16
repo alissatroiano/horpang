@@ -17,8 +17,8 @@ These rules lock the visual and interaction language for Horpang. Follow them in
 - Title -> Gallery (answer every question) -> Corridor (find the EXIT door to escape) -> Summary.
 
 ## Assets
-- All photographs, the stairwell, and scare art are original inline SVG/CSS. No third-party image URLs.
-- Only external resource: Google Fonts (Road Rage for display text) with system fallbacks. The game must work offline.
+- All photographs, the stairwell, and scare art are original inline SVG/CSS. License-free images and audio are allowed, but should be carefully checked.
+- Only external resource: Google Fonts (Road Rage for display text and Oswald for body text) with system fallbacks. The game must work offline.
 
 ## Stage 1: Crimson blood-pool title
 - Canvas blood pools (deep crimson gradient #8b0000 to #320000) spawn in a ring around the center with organic edges and splatter droplets, then a final center pool. They frame and reveal the distressed HORPANG title (Road Rage font, dark stroke).
