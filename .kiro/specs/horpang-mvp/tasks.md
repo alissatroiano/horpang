@@ -1,4 +1,4 @@
-# Implementation Plan: Horpang MVP
+﻿# Implementation Plan: Horpang MVP
 
 ## Overview
 
@@ -22,7 +22,7 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - Create the folders `src/engine`, `tests/engine`
     - _Requirements: 1.8, 5.1_
 
-- [~] 2. Question model, Validator and Default_Quiz
+- [x] 2. Question model, Validator and Default_Quiz
   - [x] 2.1 Create the question model and limits
     - Create `src/engine/model.ts` with `Question`, `Quiz`, `Result<T, E>`, `ValidationError`
     - Create `src/engine/limits.ts` with the `LIMITS` constants (prompt, options, explanation, hint, concept, question count, title, file size 1,048,576, hash 8000)
@@ -59,7 +59,7 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - Create `src/engine/defaultQuiz.ts` exporting `DEFAULT_QUIZ` (8 questions) and `loadDefaultQuiz()` that validates before returning
     - _Requirements: 2.1, 2.2, 2.5_
 
-  - [-] 2.9 Write unit tests for the Default_Quiz
+  - [x] 2.9 Write unit tests for the Default_Quiz
     - Assert 5 to 20 questions, zero validation errors, and that an injected invalid default yields an error result
     - _Requirements: 2.1, 2.2, 2.5_
 
@@ -71,15 +71,15 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - Provide a compact print option for the Share_Codec
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.6, 3.7_
 
-  - [ ] 3.2 Write property test for the JSON round trip
+  - [x] 3.2 Write property test for the JSON round trip
     - **Property 5: JSON round trip**
     - **Validates: Requirements 3.4, 3.5**
 
-  - [ ] 3.3 Write unit tests for the JSON_Codec
+  - [x] 3.3 Write unit tests for the JSON_Codec
     - Cover syntax error line and column, empty and whitespace-only text, over 1 MB rejection before parsing, validation error list passthrough
     - _Requirements: 3.2, 3.3, 3.6, 3.7_
 
-  - [ ] 3.4 Implement the CSV_Codec
+  - [x] 3.4 Implement the CSV_Codec
     - Create `src/engine/csvCodec.ts` with `CSV_HEADER`, `parseQuizCsv(text, title?)`, `printQuizCsv`
     - Use a state-machine parser (field start, unquoted, quoted, quote-in-quoted), accept `\r\n` and `\n`, store `options` as a JSON array string
     - Return per-column missing errors (row 1), unterminated-quote row, and Validator errors mapped to row `position + 1`; check size before parsing
@@ -93,7 +93,7 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - Cover missing columns, unterminated quote row, row mapping of validation errors, quoting of commas, quotes and line breaks, over 1 MB rejection
     - _Requirements: 4.3, 4.4, 4.5, 4.6, 4.7, 4.9_
 
-  - [ ] 3.7 Implement the Share_Codec
+  - [x] 3.7 Implement the Share_Codec
     - Create `src/engine/shareCodec.ts` with `ShareError`, `encodeQuiz`, `decodeShareHash` using `compressToEncodedURIComponent` and `decompressFromEncodedURIComponent`
     - Treat `null` and `""` from decompression as failure; return `length-exceeded` with the actual length and no hash when over 8000
     - Wrap in `try/catch` so it never throws; skip the Validator for `empty` and `malformed`
@@ -132,7 +132,7 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - Add `prefers-reduced-motion` safeguard CSS and the focus ring style (`3px solid #e8e4d8`, 3px offset)
     - _Requirements: 20.2, 20.3, 20.4, 19.7, 19.10_
 
-- [ ] 6. Area B pure modules
+- [x] 6. Area B pure modules
   - [x] 6.1 Implement Rng and Scare_Shuffler
     - Create `src/game/rng.ts` with `Rng` and `mulberry32`
     - Create `src/game/scareShuffler.ts` with `SCARES`, `ScareId`, `nextScare(previous, rng)` (uniform over four when `previous` is null, otherwise uniform over the other three, rng clamped to `[0, 1)`)
@@ -154,19 +154,19 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - **Property 15: Correct answers score by the prior multiplier**
     - **Validates: Requirements 13.1, 13.2, 13.3, 13.4, 13.8**
 
-  - [ ] 6.5 Write property test for wrong-answer handling
+  - [x] 6.5 Write property test for wrong-answer handling
     - **Property 16: Wrong answers penalize and record concepts once**
     - **Validates: Requirements 14.2, 14.3, 14.9**
 
-  - [ ] 6.6 Write property test for score invariants
+  - [x] 6.6 Write property test for score invariants
     - **Property 17: Score state invariants hold after every action**
     - **Validates: Requirements 13.7**
 
-  - [ ] 6.7 Write property test for missed concept ordering
+  - [x] 6.7 Write property test for missed concept ordering
     - **Property 20: Missed concepts are unique and ordered by first reference**
     - **Validates: Requirements 14.3, 16.5**
 
-  - [ ] 6.8 Write property test for reset
+  - [x] 6.8 Write property test for reset
     - **Property 21: Reset returns to the initial state**
     - **Validates: Requirements 16.7**
 
@@ -174,7 +174,7 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - Create `src/game/summary.ts` with `maxPossibleScore`, `accuracyPercent` (round half up, `total = 0` -> 0), `buildSummary` returning `Result<SummaryData, 'unavailable'>`
     - _Requirements: 16.3, 16.4, 16.5, 16.6, 16.9_
 
-  - [ ] 6.10 Write property test for summary values
+  - [x] 6.10 Write property test for summary values
     - **Property 19: Summary values follow the formulas**
     - **Validates: Requirements 16.3, 16.4**
 
@@ -191,7 +191,7 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - `ENTER_GALLERY` ignored while `grimoireOpen`; `gallery -> corridor` only when `total > 0 && solved === total`; `EXIT_ACTIVATED` valid only in `corridor`; `PLAY_AGAIN` returns to `gallery`; other pairs return the current stage
     - _Requirements: 7.11, 7.14, 8.1, 8.10, 16.1, 16.2, 16.7_
 
-  - [ ] 6.14 Write property test for stage transitions
+  - [x] 6.14 Write property test for stage transitions
     - **Property 11: Corridor is entered only when every question is solved**
     - **Validates: Requirements 7.14, 8.1, 16.1, 16.2**
 
@@ -199,7 +199,7 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - Create `src/game/flashlight.ts` with `maskSize` (200vw by 200vh), `maskTranslate` (`pointer - mask/2`), `lanternRadius` (base x 1.5)
     - _Requirements: 8.3, 8.4, 8.5, 8.12_
 
-  - [ ] 6.16 Write property test for flashlight centering
+  - [x] 6.16 Write property test for flashlight centering
     - **Property 12: Flashlight is centered on the pointer**
     - **Validates: Requirements 8.3, 8.4, 8.5**
 
@@ -207,7 +207,7 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - Create `src/state/lanternStore.ts` with `parseLantern`, `LanternStore` (key `horpang.lantern`, values `on` and `off`, in-memory fallback on storage errors, reduced-motion default, `subscribe`)
     - _Requirements: 19.1, 19.2, 19.3, 19.4, 19.9_
 
-  - [ ] 6.18 Write property test for Lantern setting
+  - [x] 6.18 Write property test for Lantern setting
     - **Property 23: Lantern setting parsing and persistence**
     - **Validates: Requirements 19.1, 19.3, 19.4, 19.9**
 
@@ -215,7 +215,7 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
     - Create `src/game/contrast.ts` with `contrastRatio(fg, bg)` using WCAG relative luminance
     - _Requirements: 12.2, 17.15, 19.10_
 
-  - [ ] 6.20 Write unit tests for contrast
+  - [x] 6.20 Write unit tests for contrast
     - Assert `#e8e4d8` on `#000000` is at least 4.5 and the focus ring color is at least 3
     - _Requirements: 12.2, 17.15, 19.10_
 
@@ -223,12 +223,12 @@ Stage order is Title -> Gallery -> Corridor -> Summary. Every rendering module i
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 8. App state and stage host
-  - [ ] 8.1 Implement the store, stage host and UI helpers
+  - [x] 8.1 Implement the store, stage host and UI helpers
     - Create `src/state/store.ts` (`GameStore` with `GameState`, `dispatch`, `subscribe`, uses `reduce` and `nextStage`)
     - Create `src/ui/stageHost.ts` (`Stage` interface with `mount` and `destroy`, `StageHost.go`, catches `mount` errors and shows an in-theme message with a reload button), `src/ui/dom.ts`, `src/ui/focusTrap.ts`, `src/ui/liveRegion.ts`
     - _Requirements: 7.9, 9.2, 9.6, 12.3_
 
-  - [ ] 8.2 Write unit tests for the focus trap and StageHost
+  - [-] 8.2 Write unit tests for the focus trap and StageHost
     - Cover Tab and Shift+Tab wrap, `destroy()` called on stage change, mount failure fallback
     - _Requirements: 12.3, 7.9_
 

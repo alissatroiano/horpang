@@ -21,8 +21,11 @@ describe('Default_Quiz', () => {
   it('loadDefaultQuiz returns an error result when the default is invalid (Req 2.5)', () => {
     const original = DEFAULT_QUIZ.questions;
     try {
-      // Too few questions makes the quiz invalid.
-      DEFAULT_QUIZ.questions = original.slice(0, 1);
+      // A correctIndex outside the options makes the quiz invalid.
+      DEFAULT_QUIZ.questions = [
+        { ...original[0], correctIndex: 99 } as (typeof original)[number],
+        ...original.slice(1),
+      ];
       const result = loadDefaultQuiz();
       expect(result.ok).toBe(false);
       if (!result.ok) expect(result.error.length).toBeGreaterThan(0);
