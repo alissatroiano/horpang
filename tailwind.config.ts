@@ -16,6 +16,10 @@ export default {
           900: '#141414',
         },
       },
+      fontFamily: {
+        horror: ['"Road Rage"', 'Creepster', 'cursive'],
+        body: ['"Special Elite"', 'monospace'],
+      },
       keyframes: {
         drip: {
           '0%': { transform: 'translateY(-10%)', opacity: '0' },
